@@ -1,29 +1,39 @@
 <!doctype html>
-<html ng-app="ghibli">
+<html>
 	<head>
-		<title>Hello AngularJS</title>
+		<title>Studio Ghibli</title>
+		<!--bootstrap css-->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+		<link href="css/custom.css" rel="stylesheet">
+		<link href="css/responsive.css" rel="stylesheet">
+		<link href="css/custom.css" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
     	<script src="movies.js"></script>
 	</head>
-
 	<body>
-		<div ng-controller="Movies">
-			<table style="width:100%">
-				<tr>
-					<th ng-click="sortTitle()">Title</th>
-					<th>Description</th> 
-					<th ng-click="sortDirector()">Director</th>
-					<th ng-click="sortReleaseDate()">Release Date</th>
-					<th ng-click="sortRatedScore()">Rated Score</th>
-				</tr>
-				<tr ng-repeat="movie in movies">
-					<td>{{movie.title}}</td>
-					<td>{{movie.description}}</td> 
-					<td>{{movie.director}}</td>
-					<td>{{movie.release_date}}</td>
-					<td>{{movie.rt_score}}</td>
-				</tr>
-			</table>	
+		<!--Navigation-->
+		<ul class="nav">
+			<li class="nav-item">
+				<a class="nav-link" href="index.html">Home</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="movies.html">Movies</a>
+			</li>
+		</ul>
+		<!--Jumbotron-->
+		<div class="jumbotron">
+			<h1 class="display-3">Welcome!</h1>
+			<p class="lead">This is a simple site showcasing films of Studio Ghibli - directly from its API!</p>
+			<hr class="my-4">
+			<p>It is a project to display a specific return of an API call, making the website dynamic this way.</p>
+			<p class="lead">
+			<a class="btn btn-primary btn-lg" href="movies.html" role="button">Learn more</a>
+			</p>
 		</div>
+		<!--Footer-->
+		<footer>
+			<p>(c)Vania R Alfitri 2017. All rights reserved.</p>
+		</footer>
 	</body>
-</html>
+</html>		

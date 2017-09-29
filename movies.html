@@ -1,0 +1,42 @@
+<!doctype html>
+<html ng-app="ghibli">
+	<head>
+		<title>Studio Ghibli</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    	<script src="movies.js"></script>
+    	<!--bootstrap css-->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+		<link href="css/custom.css" rel="stylesheet">
+		<link href="css/responsive.css" rel="stylesheet">
+	</head>
+	<body>
+		<!--Navigation-->
+		<ul class="nav">
+			<li class="nav-item">
+				<a class="nav-link" href="index.html">Home</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="movies.html">Movies</a>
+			</li>
+		</ul>
+		<div ng-controller="Movies">
+			<table class="table table-striped" style="width:100%">
+				<tr>
+					<th ng-click="sortTitle()">Title</th>
+					<th>Description</th> 
+					<th ng-click="sortDirector()">Director</th>
+					<th ng-click="sortReleaseDate()">Release Date</th>
+					<th ng-click="sortRatedScore()">Rated Score</th>
+				</tr>
+				<tr class="well" ng-repeat="movie in movies">
+					<td>{{movie.title}}</td>
+					<td>{{movie.description}}</td> 
+					<td>{{movie.director}}</td>
+					<td>{{movie.release_date}}</td>
+					<td>{{movie.rt_score}}</td>
+				</tr>
+			</table>	
+		</div>
+	</body>
+</html>
