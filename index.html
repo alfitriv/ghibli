@@ -1,0 +1,29 @@
+<!doctype html>
+<html ng-app="ghibli">
+	<head>
+		<title>Hello AngularJS</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    	<script src="movies.js"></script>
+	</head>
+
+	<body>
+		<div ng-controller="Movies">
+			<table style="width:100%">
+				<tr>
+					<th ng-click="sortTitle()">Title</th>
+					<th>Description</th> 
+					<th ng-click="sortDirector()">Director</th>
+					<th ng-click="sortReleaseDate()">Release Date</th>
+					<th ng-click="sortRatedScore()">Rated Score</th>
+				</tr>
+				<tr ng-repeat="movie in movies">
+					<td>{{movie.title}}</td>
+					<td>{{movie.description}}</td> 
+					<td>{{movie.director}}</td>
+					<td>{{movie.release_date}}</td>
+					<td>{{movie.rt_score}}</td>
+				</tr>
+			</table>	
+		</div>
+	</body>
+</html>
